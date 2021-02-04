@@ -1,0 +1,123 @@
+*{  
+    margin: 0px;
+    padding: 0px;
+}
+    
+body{
+    width: 100%;
+    height: auto;
+    background-color:#f1e5db;
+}
+
+header{
+    width: auto;
+    height: 10%;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #4592af;
+    box-shadow: 1px 1px 5px #000000;
+    color: #b4f1f1;
+}
+
+#nav_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.funcionarios_img{
+    width: 90px;
+    height: 60px;
+    border-radius: 90%;
+}
+
+.tema{
+    margin-right: 20px ;
+}
+
+#btn_tema{
+    outline:none;
+    width: 60px;
+    height: 25px;
+    text-transform: uppercase;
+    font-weight:bold;
+    background-color: #226089;
+    color: rgb(254, 254, 255);
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px #b4f1f1;
+    transition: 0.2s;
+    transition-timing-function: cubic-bezier();
+}
+
+#btn_tema:active{
+    width: 65px;
+    height: 28.5px;
+}
+
+.fundo{
+    width: 100%;
+    height: 90%;
+    margin: 0px auto;
+    /* padding: 32px; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background-color:#faeadc;
+}
+
+.cadastro{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #e3c4a8;
+    margin: 50px;
+    padding: 20px;
+    box-shadow: 2px 2px 10px #4e2b0f;
+}
+
+h1 {
+    margin: 15px;
+    padding: 0px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #226089;
+    text-shadow: 1px 1px 8px #d8e0fa;
+}
+
+#campos{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form label{
+    font-size: 16px;
+    font-weight: 600;
+    color: #012a46;
+}
+
+.input_form{
+    outline:none;
+    box-shadow: 1px 1px 5px #226089;
+    width: 95%;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#btn_send {
+    background-color:#226089;
+    transition: 0.2s;
+}
+
+#btn_send:active{
+    box-shadow: 2px 2px 8px #012a46;
+    background-color:#011522;
+}
+
