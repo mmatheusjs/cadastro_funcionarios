@@ -9,7 +9,7 @@
     <title>Cadastro</title>
 </head>
 
-<body>
+<body class="light">
 
     <header>
         <nav id="nav_menu">
@@ -24,24 +24,24 @@
     </header>
     
     <div class="fundo">
-        <div class="cadastro">
-            <h1>DADOS DO FUNCIONÁRIO</h1>
+        <div id="cadastro" class="light_cadastro">
+            <h1 class="light_font">DADOS DO FUNCIONÁRIO</h1>
             <form action="" id="campos">
-                <label for="func_name">Nome do funcionário:</label>
+                <label for="func_name" class="light_font">Nome do funcionário:</label>
                 <input type="text" name="func_name" id="func_name" class="input_form" required>
 
-                <label for="cpf">CPF:</label>
+                <label for="cpf" class="light_font">CPF:</label>
                 <input type="text" name="cpf" id="cpf" class="input_form" required 
-                onkeydown="javascript: fMasc( this, mCPF );" onchange="ValidaCPF()" maxlength="14">
+                onkeydown="javascript: fMasc(this, mCPF );" onchange="ValidaCPF()" maxlength="14">
 
-                <label for="rg">RG:</label>
+                <label for="rg" class="light_font">RG:</label>
                 <input type="text" name="rg" id="rg" class="input_form" required value=""
                  onkeypress="mascara (this, '##.###.###-#')" maxlength="12" onchange="validarrg()">
 
-                <label for="nascimento">Data de Nascimento:</label>
+                <label for="nascimento" class="light_font">Data de Nascimento:</label>
                 <input type="date" name="nascimento" id="nascimento" class="input_form" required>
 
-                <label for="cnh">Habilitação:</label>
+                <label for="cnh" class="light_font">Habilitação:</label>
                 <select name="cnh" id="cnh" class="input_form" required>
                     <option value="" disabled selected>Selecione o tipo de habilitação</option>
                     <option value="Tipo A">Tipo A</option>
@@ -49,7 +49,7 @@
                     <option value="Tipo C">Tipo C</option>
                 </select>
 
-                <label for="estado_civil">Estado Civil:</label>
+                <label for="estado_civil" class="light_font">Estado Civil:</label>
                 <select name="estado_civil" id="estado_civil" class="input_form" required>
                     <option value="" disabled selected>Selecione o estado civil</option>
                     <option value="solteiro">Solteiro(a):</option>
@@ -57,25 +57,26 @@
                     <option value="viuvo">Viuvo(a):</option>
                 </select>
               
-                <label for="cep">CEP:</label>
-                <input type="text" name="cep" id="cep" class="input_form" required> 
+                <label for="cep" class="light_font">CEP:</label>
+                <input type="text" name="cep" id="cep" class="input_form" required 
+                maxlength="9" onkeypress="mascara(this, '#####-###')" onchange="getDadosEnderecoCEP(this.value)"> 
 
-                <label for="rua">Rua:</label>
+                <label for="rua" class="light_font">Rua:</label>
                 <input type="text" name="rua" id="rua" class="input_form" required>
 
-                <label for="bairro">Bairro:</label>
+                <label for="bairro" class="light_font">Bairro:</label>
                 <input type="text" name="bairro" id="bairro" class="input_form"required>
 
-                <label for="cidade">Cidade:</label>
+                <label for="cidade" class="light_font">Cidade:</label>
                 <input type="text" name="cidade" id="cidade" class="input_form" required>
 
-                <label for="estado">Estado:</label>
+                <label for="estado" class="light_font">Estado:</label>
                 <input type="text" name="estado" id="estado" class="input_form" required>
 
-                <label for="numero">Número:</label>
+                <label for="numero" class="light_font">Número:</label>
                 <input type="number" name="numero" id="numero" class="input_form" required>
 
-                <label for="complemento">Complemento:</label>
+                <label for="complemento" class="light_font">Complemento:</label>
                 <input type="text" name="complemento" id="complemento" class="input_form">
 
                 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="btn_send">

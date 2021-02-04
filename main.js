@@ -1,3 +1,43 @@
+// Função para mudar o tema
+let body = document.querySelector('body');
+let cadastro = document.querySelector('#cadastro');
+let title = document.querySelector('h1');
+let font_label = document.querySelectorAll('label');
+
+
+function mudaCor(){
+    if (body.className == 'light'){
+        body.className = 'dark';
+    } else {
+        body.className = 'light';
+    }
+
+    if (cadastro.className == 'light_cadastro'){
+        cadastro.className = 'dark_cadastro';
+    } else {
+        cadastro.className = 'light_cadastro';
+    }
+    
+//Interador para verificar a classe de cada elemento do Array
+    font_label.forEach(function (element) {
+        if (element.className == 'light_font'){
+            element.className = 'dark_font';
+        } else {
+            element.className = 'light_font';
+        }     
+    });
+
+    if (title.className == 'light_font'){
+        title.className = 'dark_font';
+    } else { 
+        title.className = 'light_font';
+    }
+}
+
+document.querySelector('#btn_tema').addEventListener('click', mudaCor);
+
+
+
 //Função para a máscara do RG
 function mascara(t, mask) {
     var i = t.value.length;
@@ -61,3 +101,134 @@ function ValidaCPF() {
         alert("CPF Inválido");
     }
 }
+
+//-----------CEP----------
+//Função para validar o campo CEP
+
+function validarCEP(){
+    let cep = document.querySelector('#cep');
+    
+        if(cep.value.length == 9){
+            alert("CEP Válido!");
+        } else {
+            alert("CEP Inválido! Favor digitar novamente");
+        }
+}
+    document.querySelector('#cep').addEventListener('change', validarCEP);
+
+// Função para requisitar os dados referentes ao CEP na API do viacep
+function getDadosEnderecoCEP(cep) {
+
+    let xhr = new XMLHttpRequest();
+
+    let url = 'https://viacep.com.br/ws/' + cep + '/json/unicode/';
+
+    xhr.open('GET', url, true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                    let dadosJSONText = xhr.responseText;
+                    let dadosJSONObj = JSON.parse(dadosJSONText);
+
+                    document.getElementById('rua').value = dadosJSONObj.logradouro;
+                    document.getElementById('bairro').value = dadosJSONObj.bairro;
+                    document.getElementById('cidade').value = dadosJSONObj.localidade;
+                    document.getElementById('estado').value = dadosJSONObj.uf;
+            }
+        }
+    }
+    xhr.send();
+}
+
+//-------------BTN Enviar---------
+
+function validarCampos(){
+    var func_name = campos.func_name.value;
+    if (func_name == "") {
+        alert("Preencha o campo Nome do Funcionário");
+        campos.func_name.focus();
+        return false;
+    }
+
+    var cpf = campos.cpf.value;
+    if (cpf == ""){
+        alert("Preencha o campo CPF");
+        campos.cpf.focus();
+        return false;
+    }
+
+    var rg = campos.rg.value;
+    if (rg ==""){
+        alert("Preencha o campo RG");
+        campos.rg.focus();
+        return false;
+    }
+
+    var nascimento = campos.nascimento.value;
+    if (nascimento ==""){
+        alert("Preencha o campo Data de Nascimento");
+        campos.nascimento.focus();
+        return false;
+    }
+
+    var cnh = campos.cnh.value;
+    if (cnh ==""){
+        alert("Escolha a categoria de sua habilitação");
+        campos.cnh.focus();
+        return false;
+    }
+
+    var estado_civil = campos.estado_civil.value;
+    if(estado_civil == ""){
+        alert("Escolha seu estado civil");
+        campos.estado_civil.focus();
+        return false;
+    }
+
+    var cep = campos.cep.value;
+    if(cep ==""){
+        alert("Preencha o campo CEP");
+        campos.cep.focus();
+        return false;
+    }
+
+    var  rua = campos.rua.value;
+    if(rua ==""){
+        alert("Preencha o campo Rua");
+        campos.rua.focus();
+        return false;
+    }
+
+    var bairro = campos.bairro.value;
+    if(bairro ==""){
+        alert("Preencha o campo Bairro");
+        campos.bairro.focus();
+        return false;
+    }
+
+    var cidade = campos.cidade.value;
+    if (cidade ==""){
+        alert("Preencha o campo Cidade");
+        campos.cidade.focus();
+        return false;
+    }
+
+    var estado = campos.estado.value;
+    if (estado ==""){
+        alert("Preencha o campo Estado");
+        campos.estado.focus();
+        return false;
+    }
+
+    var numero = campos.numero.value;
+    if (numero ==""){
+        alert("Preencha o campo Número");
+        campos.numero.focus();
+        return false;
+    }
+}
+
+// EventListener para chamar a function "validarcampos()" ao clicar no botão #btn_send
+document.querySelector('#btn_send').addEventListener('click', validarCampos);
+
