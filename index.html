@@ -28,19 +28,21 @@
             <h1>DADOS DO FUNCIONÁRIO</h1>
             <form action="" id="campos">
                 <label for="func_name">Nome do funcionário:</label>
-                <input type="text" name="func_name" id="func_name" class="input_form">
+                <input type="text" name="func_name" id="func_name" class="input_form" required>
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" class="input_form">
+                <input type="text" name="cpf" id="cpf" class="input_form" required 
+                onkeydown="javascript: fMasc( this, mCPF );" onchange="ValidaCPF()" maxlength="14">
 
                 <label for="rg">RG:</label>
-                <input type="text" name="rg" id="rg" class="input_form">
+                <input type="text" name="rg" id="rg" class="input_form" required value=""
+                 onkeypress="mascara (this, '##.###.###-#')" maxlength="12" onchange="validarrg()">
 
                 <label for="nascimento">Data de Nascimento:</label>
-                <input type="date" name="nascimento" id="nascimento" class="input_form">
+                <input type="date" name="nascimento" id="nascimento" class="input_form" required>
 
                 <label for="cnh">Habilitação:</label>
-                <select name="cnh" id="cnh" class="input_form">
+                <select name="cnh" id="cnh" class="input_form" required>
                     <option value="" disabled selected>Selecione o tipo de habilitação</option>
                     <option value="Tipo A">Tipo A</option>
                     <option value="Tipo B">Tipo B</option>
@@ -48,7 +50,7 @@
                 </select>
 
                 <label for="estado_civil">Estado Civil:</label>
-                <select name="estado_civil" id="estado_civil" class="input_form">
+                <select name="estado_civil" id="estado_civil" class="input_form" required>
                     <option value="" disabled selected>Selecione o estado civil</option>
                     <option value="solteiro">Solteiro(a):</option>
                     <option value="casado">Casado(a):</option>
@@ -56,22 +58,22 @@
                 </select>
               
                 <label for="cep">CEP:</label>
-                <input type="text" name="cep" id="cep" class="input_form">
+                <input type="text" name="cep" id="cep" class="input_form" required> 
 
                 <label for="rua">Rua:</label>
-                <input type="text" name="rua" id="rua" class="input_form">
+                <input type="text" name="rua" id="rua" class="input_form" required>
 
                 <label for="bairro">Bairro:</label>
-                <input type="text" name="bairro" id="bairro" class="input_form">
+                <input type="text" name="bairro" id="bairro" class="input_form"required>
 
                 <label for="cidade">Cidade:</label>
-                <input type="text" name="cidade" id="cidade" class="input_form">
+                <input type="text" name="cidade" id="cidade" class="input_form" required>
 
                 <label for="estado">Estado:</label>
-                <input type="text" name="estado" id="estado" class="input_form">
+                <input type="text" name="estado" id="estado" class="input_form" required>
 
                 <label for="numero">Número:</label>
-                <input type="number" name="numero" id="numero" class="input_form">
+                <input type="number" name="numero" id="numero" class="input_form" required>
 
                 <label for="complemento">Complemento:</label>
                 <input type="text" name="complemento" id="complemento" class="input_form">
